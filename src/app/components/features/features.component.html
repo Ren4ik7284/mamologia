@@ -1,0 +1,9 @@
+<div class="features">
+  @for (feature of features; track feature.title) {
+    <div class="feature">
+      <div class="feature-icon">{{ feature.icon }}</div>
+      <h3>{{ feature.title }}</h3>
+      <p>{{ feature.description }}</p>
+    </div>
+  }
+</div>

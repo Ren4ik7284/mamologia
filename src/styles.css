@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  color: #333;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.page.active {
+  animation: fadeIn 0.5s;
+}
+/* src/styles.css - добавьте это */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  color: #333;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+/* Глобальные классы анимаций */
+.fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Контейнер */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.page.active {
+  animation: fadeIn 0.5s;
+}

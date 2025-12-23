@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<app-navigation 
+  [activePage]="activePage" 
+  (pageChange)="switchPage($event)">
+</app-navigation>
+
+<main class="container">
+  @if (activePage === 'home') {
+    
+    <app-hero (navigateToContacts)="switchPage('contacts')"></app-hero>
+  }
+  
+  @if (activePage === 'home') {
+    <section class="page active">
+      <app-features></app-features>
+    </section>
+  }
+  
+  @if (activePage === 'services') {
+    <section class="page active">
+      <app-services></app-services>
+    </section>
+  }
+  
+  @if (activePage === 'reviews') {
+    <section class="page active">
+      <app-reviews></app-reviews>
+    </section>
+  }
+  
+  @if (activePage === 'contacts') {
+    <section class="page active">
+      <div class="contact-container">
+        <app-contact-info></app-contact-info>
+        <app-contact-form></app-contact-form>
+      </div>
+    </section>
+  }
+</main>
+
+<app-footer (pageChange)="switchPage($event)"></app-footer>

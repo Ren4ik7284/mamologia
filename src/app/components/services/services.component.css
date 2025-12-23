@@ -1,0 +1,112 @@
+h2 {
+  color: #1a6bc3;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eaeaea;
+  font-size: 28px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.service-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+}
+
+.service-header {
+  background-color: #1a6bc3;
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.service-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-content p {
+  margin-bottom: 10px;
+}
+
+.price {
+  color: #1a6bc3;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+.service-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Задержка анимации для каждой карточки */
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+.service-card:nth-child(6) { animation-delay: 0.6s; }
+.service-card:nth-child(7) { animation-delay: 0.7s; }
+.service-card:nth-child(8) { animation-delay: 0.8s; }
+.service-card:nth-child(9) { animation-delay: 0.9s; }
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.service-header {
+  background: linear-gradient(90deg, #1a6bc3, #2c80ff);
+  color: white;
+  padding: 18px;
+  font-weight: bold;
+  font-size: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.7s;
+}
+
+.service-card:hover .service-header::after {
+  left: 100%;
+}

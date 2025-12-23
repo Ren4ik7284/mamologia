@@ -1,0 +1,74 @@
+<div class="contact-form">
+  <h3>Запись на прием</h3>
+  <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Ваше имя *</label>
+      <input type="text" id="name" formControlName="name" placeholder="Иван Иванов">
+      @if (name?.invalid && name?.touched) {
+        <div class="error-message">
+          @if (name?.errors?.['required']) {
+            <div>Имя обязательно для заполнения</div>
+          }
+          @if (name?.errors?.['minlength']) {
+            <div>Имя должно содержать минимум 2 символа</div>
+          }
+          @if (name?.errors?.['whitespace']) {
+            <div>Пробелы не допускаются</div>
+          }
+          @if (name?.errors?.['onlySpaces']) {
+            <div>Поле не может содержать только пробелы</div>
+          }
+        </div>
+      }
+    </div>
+    
+    <div class="form-group">
+      <label for="phone">Телефон *</label>
+      <input type="tel" id="phone" formControlName="phone" placeholder="+7 (999) 123-45-67">
+      @if (phone?.invalid && phone?.touched) {
+        <div class="error-message">
+          @if (phone?.errors?.['required']) {
+            <div>Телефон обязателен для заполнения</div>
+          }
+          @if (phone?.errors?.['pattern'] || phone?.errors?.['phoneFormat']) {
+            <div>Введите корректный номер телефона (начинается с +7, 8 или 7)</div>
+          }
+          @if (phone?.errors?.['phoneLength']) {
+            <div>Номер телефона слишком короткий</div>
+          }
+        </div>
+      }
+    </div>
+    
+    <div class="form-group">
+      <label for="service">Услуга</label>
+      <select id="service" formControlName="service">
+        @for (service of services; track service.value) {
+          <option [value]="service.value">{{ service.label }}</option>
+        }
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="date">Желаемая дата</label>
+      <input type="date" id="date" formControlName="date">
+    </div>
+    
+    <div class="form-group">
+      <label for="message">Сообщение</label>
+      <textarea id="message" formControlName="message" rows="3" 
+                placeholder="Ваши пожелания или симптомы"></textarea>
+    </div>
+    
+    <button type="submit" class="btn" [disabled]="appointmentForm.invalid">
+      Отправить заявку
+    </button>
+    
+    @if (showMessage) {
+      <div [class]="'form-message ' + messageType"
+           [style.color]="messageType === 'success' ? 'green' : 'red'">
+        {{ formMessage }}
+      </div>
+    }
+  </form>
+</div>

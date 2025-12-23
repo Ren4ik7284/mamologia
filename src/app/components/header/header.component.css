@@ -1,0 +1,60 @@
+header {
+  background: linear-gradient(to right, #1a6bc3, #2c80ff);
+  color: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-circle {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a6bc3;
+  font-weight: bold;
+  font-size: 24px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo-text h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.logo-text p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.header-contacts p {
+  text-align: right;
+  line-height: 1.4;
+  margin: 3px 0;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .header-contacts {
+    text-align: center;
+  }
+}

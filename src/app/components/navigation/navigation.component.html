@@ -1,0 +1,38 @@
+<nav>
+  <div class="nav-container">
+    <ul class="nav-links">
+      <li>
+        <a href="#" 
+           class="nav-link" 
+           [class.active]="activePage === 'home'"
+           (click)="switchPage('home', $event)">
+          Главная
+        </a>
+      </li>
+      <li>
+        <a href="#" 
+           class="nav-link" 
+           [class.active]="activePage === 'services'"
+           (click)="switchPage('services', $event)">
+          Услуги
+        </a>
+      </li>
+      <li>
+        <a href="#" 
+           class="nav-link" 
+           [class.active]="activePage === 'reviews'"
+           (click)="switchPage('reviews', $event)">
+          Отзывы
+        </a>
+      </li>
+      <li>
+        <a href="#" 
+           class="nav-link" 
+           [class.active]="activePage === 'contacts'"
+           (click)="switchPage('contacts', $event)">
+          Контакты
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

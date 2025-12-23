@@ -1,0 +1,13 @@
+<div class="contact-info">
+  <h3>Контактная информация</h3>
+  
+  @for (contact of contacts; track contact.title) {
+    <div class="contact-item">
+      <div class="contact-icon">{{ contact.icon }}</div>
+      <div class="contact-details">
+        <strong>{{ contact.title }}</strong>
+        <div [innerHTML]="contact.details"></div>
+      </div>
+    </div>
+  }
+</div>

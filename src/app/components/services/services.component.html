@@ -1,0 +1,15 @@
+<h2>Наши услуги</h2>
+<p>Мы предлагаем полный спектр услуг по диагностике и лечению заболеваний молочных желез:</p>
+
+<div class="services-grid">
+  @for (service of services; track service.title) {
+    <div class="service-card">
+      <div class="service-header">{{ service.title }}</div>
+      <div class="service-content">
+        <p>{{ service.description }}</p>
+        <p>{{ service.details }}</p>
+        <div class="price">{{ service.price }}</div>
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,56 @@
+<div class="reviews-container">
+  <h2>Отзывы пациентов</h2>
+  <p class="subtitle">Что говорят наши пациенты о лечении</p>
+  
+  <div class="stats">
+    <div class="stat">
+      <div class="number">4.8</div>
+      <div class="label">Средняя оценка</div>
+      <div class="stars">★★★★★</div>
+    </div>
+    <div class="stat">
+      <div class="number">{{ reviews.length }}</div>
+      <div class="label">Всего отзывов</div>
+    </div>
+    <div class="stat">
+      <div class="number">98%</div>
+      <div class="label">Рекомендуют</div>
+    </div>
+  </div>
+  
+  <div class="reviews-list">
+    <!-- Исправлено: используем @for вместо *ngFor -->
+    @for (review of reviews; track review.id) {
+      <div class="review-card">
+        <div class="review-header">
+          <div class="patient-info">
+            <div class="avatar">{{ review.name.charAt(0) }}</div>
+            <div>
+              <div class="name">{{ review.name }}, {{ review.age }} лет</div>
+              <div class="meta">
+                Врач: {{ review.doctor }} • {{ review.date }}
+                @if (review.verified) {
+                  <span class="verified">✓ Проверенный</span>
+                }
+              </div>
+            </div>
+          </div>
+          <div class="rating">
+            <div class="stars">{{ getStars(review.rating).join('') }}</div>
+            <div class="rating-number">{{ review.rating }}/5</div>
+          </div>
+        </div>
+        <div class="review-text">{{ review.text }}</div>
+      </div>
+    }
+  </div>
+  
+  <div class="add-review">
+    <h3>Оставить отзыв</h3>
+    <p>Поделитесь вашим опытом лечения в нашем центре</p>
+    <!-- Исправлено: используем (click) или другой метод навигации -->
+    <button class="btn" (click)="navigateToContacts()">Написать отзыв</button>
+    <!-- ИЛИ если у вас есть роутинг: -->
+    <!-- <button class="btn" [routerLink]="['/contacts']">Написать отзыв</button> -->
+  </div>
+</div>
